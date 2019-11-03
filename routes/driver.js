@@ -13,11 +13,6 @@ router.get(
     validateCoordinates,
     asyncHandler(driver.getDriversWithinThreeKm)
 );
-router.get(
-    '/closest',
-    validateCoordinates,
-    asyncHandler(driver.getClosestDrivers)
-);
 router.get('/:driverID', asyncHandler(driver.getOneDriver));
 
 export default router;

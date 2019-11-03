@@ -5,16 +5,7 @@ import app from '../app';
 chai.use(chaiHttp);
 chai.should();
 
-describe('Application', () => {
-    before(async () => {
-        try {
-            // driverData = await Driver.findByPk(1);
-            // riderData = await Rider.findByPk(1);
-        } catch (error) {
-            console.log(error);
-        }
-    });
-
+describe('Trip', () => {
     it('should create a trip', done => {
         const trip = {
             rider: 1,
