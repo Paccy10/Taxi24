@@ -5,7 +5,8 @@
     "main": "app.js",
     "scripts": {
         "test": "node_modules/.bin/sequelize db:migrate:undo:all --env test && node_modules/.bin/sequelize db:migrate --env test && node_modules/.bin/sequelize db:seed:all --env test && NODE_ENV=test nyc --reporter=html --reporter=text mocha --require babel-register tests/* --exit",
-        "start": "NODE_ENV=development nodemon --require babel-register app.js"
+        "start": "NODE_ENV=development nodemon --require babel-register app.js",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
     },
     "author": "Pacifique Clement Ndayisenga",
     "license": "ISC",
@@ -23,6 +24,7 @@
         "babel-register": "^6.26.0",
         "chai": "^4.2.0",
         "chai-http": "^4.3.0",
+        "coveralls": "^3.0.7",
         "eslint": "^6.6.0",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-config-prettier": "^6.5.0",
