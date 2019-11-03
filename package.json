@@ -1,0 +1,39 @@
+{
+    "name": "taxi24",
+    "version": "1.0.0",
+    "description": "Taxi driving API",
+    "main": "app.js",
+    "scripts": {
+        "test": "node_modules/.bin/sequelize db:migrate:undo:all --env test && node_modules/.bin/sequelize db:migrate --env test && node_modules/.bin/sequelize db:seed:all --env test && NODE_ENV=test nyc --reporter=html --reporter=text mocha --require babel-register tests/* --exit",
+        "start": "NODE_ENV=development nodemon --require babel-register app.js"
+    },
+    "author": "Pacifique Clement Ndayisenga",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^3.0.6",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "pg": "^7.12.1",
+        "pg-hstore": "^2.3.3",
+        "sequelize": "^5.21.2",
+        "sequelize-cli": "^5.5.1"
+    },
+    "devDependencies": {
+        "babel-preset-env": "^1.7.0",
+        "babel-register": "^6.26.0",
+        "chai": "^4.2.0",
+        "chai-http": "^4.3.0",
+        "eslint": "^6.6.0",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-config-prettier": "^6.5.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-prettier": "^3.1.1",
+        "mocha": "^6.2.2",
+        "nodemon": "^1.19.4",
+        "nyc": "^14.1.1",
+        "prettier": "^1.18.2"
+    },
+    "nyc": {
+        "exclude": "tests/*"
+    }
+}
