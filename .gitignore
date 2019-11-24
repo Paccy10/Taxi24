@@ -6,6 +6,6 @@ coverage/
 
 .env
 
-.vs_code/
+.vscode/
 
 .DS_Store
